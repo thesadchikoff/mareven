@@ -1,0 +1,25 @@
+{
+	"name": "test",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite --host",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"gsap": "^3.12.5",
+		"swiper": "^11.0.7",
+		"vite-plugin-style-import": "^2.0.0",
+		"vue": "^3.4.19"
+	},
+	"devDependencies": {
+		"@prettier/plugin-pug": "^3.0.0",
+		"@vitejs/plugin-vue": "^5.0.4",
+		"pug": "^3.0.2",
+		"sass": "^1.71.1",
+		"vite": "^5.1.4",
+		"vue-pug-plugin": "^2.0.3"
+	}
+}
