@@ -1,10 +1,12 @@
 <template>
 <!--  <modal-view/>-->
 	<section class="flex bg-[#fffbde] flex-col gap-[35px] w-full h-screen z-50 justify-center">
-      <h1 class="px-20 uppercase text-[#df231d] flex items-center gap-[4px] font-bold text-[50px]">
-			История
-			<article class="text-[#fbd927]">роллтон</article>
-		</h1>
+      <div class="w-full mobile:px-[10px] tablet:px-32">
+        <h1 class="uppercase text-[#df231d] flex items-center gap-[4px] font-bold text-[50px]">
+          История
+          <article class="text-[#fbd927]">роллтон</article>
+        </h1>
+      </div>
 		<swiper
 			:modules="modules"
 			class="px-10 h-[1500px] bg-transparent flex items-center justify-center flex-col"
