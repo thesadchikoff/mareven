@@ -1,0 +1,24 @@
+<script setup>
+
+</script>
+
+<template>
+<div class="w-full mobile:h-full py-10 tablet:h-screen bg-[#FBD927] flex">
+  <div class="container md-auto  flex mobile:flex-col tablet:flex-row justify-between">
+    <div class="mobile:w-full tablet:w-1/2 flex flex-col gap-[90px]">
+      <h2 class="uppercase text-[#DF231D]  mobile:text-[40px] tablet:text-[50px] font-bold">Теплые моменты с Роллтон</h2>
+      <div class="flex flex-col gap-[20px]">
+        <h1 class="text-[#57A03C] text-[80px] font-bold uppercase">Продали <br> 2 млн км лапши</h1>
+        <span class="font-medium text-[29px]">что равно 50-ти обхватам <br> Земли</span>
+      </div>
+    </div>
+    <div class="mobile:w-full tablet:w-1/2 flex mobile:justify-center mobile:items-center">
+      <img src="../assets/images/planet.png" alt="">
+    </div>
+  </div>
+</div>
+</template>
+
+<style scoped lang="scss">
+
+</style>

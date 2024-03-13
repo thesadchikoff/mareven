@@ -1,9 +1,10 @@
 <template lang="pug">
-.welcome-section(:style="{ transform: `translateY(${scrolled}px)` }")
+.welcome-section()
   .content-container
     .logo-box(:class="scene === 'open-pack' ? 'align-start' : 'align-center'")
       img.logo(src="../assets/images/logo_before.svg", alt="" :class="scene === 'open-pack' ? 'minimal' : 'original'")
     .radial-blur
+    .promo-block(v-if="scene === 'open-pack'" :class="'z-[5000000] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-fade animate-duration-[400ms] animate-delay-1000'")
     .pack(v-if="scene === 'default'" )
       .open-button(@mouseenter="isHover = true", @mouseleave="isHover = false" @click="scene = 'open-pack'")
         img.row(src="../assets/images/row.svg", alt="")
@@ -20,6 +21,7 @@
       img.open-pack__picture(
         src="../assets/images/open_pack.png",
         alt="",
+        :class="'animate-fade-up'"
       )
 </template>
 
@@ -42,51 +44,9 @@ export default {
 		const resizeLogo = () => {
 			resizeble.value = !resizeble.value
 		}
-		const handleScroll = () => {
-			scrolled.value = window.pageYOffset * 0.5 // Изменяем значение scrolled при прокрутке
-		}
-
-		const handleResize = () => {
-			screenWidth.value = window.innerWidth // Обновляем screenWidth при изменении размеров окна
-		}
-
-		onMounted(() => {
-			// Добавляем обработчики событий при монтировании компонента
-			window.addEventListener('scroll', handleScroll)
-			window.addEventListener('resize', handleResize)
-		})
-
-		onUnmounted(() => {
-			// Удаляем обработчики событий при демонтировании компонента
-			window.removeEventListener('scroll', handleScroll)
-			window.removeEventListener('resize', handleResize)
-		})
-
-		// Анимация с использованием GSAP
-		gsap.to(scrolled, {
-			value: window.pageYOffset * 0.5, // Анимируем значение scrolled при прокрутке
-			ease: 'none',
-			onUpdate: () => {
-				// Обновляем значение scrolled при каждом обновлении анимации
-				scrolled.value = scrolled.value
-			},
-		})
-
-		gsap.to(window, {
-			scrollTo: { y: scrolled }, // Анимируем прокрутку страницы к значению scrolled
-			ease: 'power2.inOut', // Используем плавное ускорение для более плавного скролла
-			onUpdate: () => {
-				// Обновляем значение scrolled при каждом обновлении анимации
-				scrolled.value = window.pageYOffset
-			},
-		})
-
 
 
 		return {
-			screenWidth,
-			scrolled,
-			resizeble,
 			resizeLogo,
       scene
 		}
@@ -97,9 +57,8 @@ export default {
 <style lang="scss" scoped>
 $feature: max-width;
 .welcome-section {
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
+ 	width: 100%;
+	height: 100vh;
 	position: sticky;
 	padding: 63px 0;
 	display: flex;
@@ -162,7 +121,7 @@ $feature: max-width;
 				}
 			}
 			.pack-picture {
-				z-index: 5;
+				//z-index: 5;
 				position: absolute;
         bottom: -20px;
 			}
@@ -177,7 +136,7 @@ $feature: max-width;
 			}
 		}
     .open-effect {
-      z-index: 10000;
+      //z-index: 10000;
       position: absolute;
       margin-left: auto;
       margin-right: auto;
@@ -188,11 +147,10 @@ $feature: max-width;
       animation: pulse 20s ease-in-out infinite;
     }
     .open-pack {
-      z-index: 500000;
+      //z-index: 500000;
       &__picture {
         position: relative;
         transition: all .3s ease;
-        animation: visible .3 forwards;
         z-index: 500000;
       }
     }
@@ -204,11 +162,20 @@ $feature: max-width;
 		}
 		@media screen and ($feature: 1400px) {
 			.logo {
-				widows: 1000;
+				width: 100%;
 				height: 490px;
 			}
 		}
 	}
+}
+
+.promo-block {
+  background-image: url("../assets/images/25.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  width: 100%;
+  height: 100%;
 }
 
 .logo-box {

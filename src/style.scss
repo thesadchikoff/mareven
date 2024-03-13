@@ -1,8 +1,15 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	width: 100%;
+}
 body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	font-family: "Montserrat", sans-serif;
 	width: 100%;
 	#app {
 		width: 100%;
@@ -11,8 +18,29 @@ body {
 	}
 }
 
+.swiper {
+	width: 100%;
+	height: 1500px !important;
+}
+
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.swiper {
+	width: 100%;
+	height: 300px;
+}
 
 .swiper-wrapper {
-	gap: 0 !important;
-	padding: 0 250px;
+	height: 100%;
+	width: 100%;
+}
+
+.modal-view  {
+	overflow: hidden;
 }

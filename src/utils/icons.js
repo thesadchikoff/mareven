@@ -22,8 +22,8 @@ function loadIcons() {
         const name = fileName.substring(fileName.lastIndexOf("/") + 1, fileName.length - 4);
         imageResources.set(name, modules[fileName]);
     }
-    // console.log(imageResources);
-    // console.log(getIcon("lobby"));
+    console.log(imageResources);
+    // console.log(getSvgIcon("close"));
 }
 
 function getSvgIcon(name) {
