@@ -2,7 +2,7 @@
   <div>
     <teleport to="body">
       <div class="modal-wrapper" @click="close">
-        <div @click.stop class="bg-white flex flex-col w-full h-[500px] animate-fade-up animate-duration-[400ms] animate-delay-100 p-10 rounded-3xl">
+        <div @click.stop class="bg-white flex flex-col container h-[500px] animate-fade-up animate-duration-[400ms] animate-delay-100 p-10 rounded-3xl">
           <div  class="w-full h-max flex justify-end  items-center">
             <base-icon name="close_button" @click="close" size="57" color="#57A03C" class="cursor-pointer"/>
           </div>
@@ -77,7 +77,6 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 150px;
   background: rgb(87, 160, 60, 0.8);
   display: flex;
   justify-content: center;
