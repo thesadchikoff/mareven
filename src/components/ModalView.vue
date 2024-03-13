@@ -2,15 +2,15 @@
   <div>
     <teleport to="body">
       <div class="modal-wrapper" @click="close">
-        <div @click.stop class="bg-white flex flex-col container h-[500px] animate-fade-up animate-duration-[400ms] animate-delay-100 p-10 rounded-3xl">
+        <div @click.stop class="bg-white flex flex-col mobile:w-full mobile:rounded-none tablet:container mobile:h-full tablet:h-[500px] animate-fade-up animate-duration-[400ms] animate-delay-100 p-10 rounded-3xl">
           <div  class="w-full h-max flex justify-end  items-center">
             <base-icon name="close_button" @click="close" size="57" color="#57A03C" class="cursor-pointer"/>
           </div>
-          <div  class="flex flex-1 relative">
-            <div class="flex w-2/3 flex-col gap-5">
-              <div class="flex items-center justify-between">
+          <div  class="flex flex-1 relative mobile:flex-col tablet:flex-row">
+            <div class="flex mobile:w-full tablet:w-2/3 flex-col gap-5">
+              <div class="flex tablet:items-center tablet:justify-between mobile:flex-col tablet:flex-row">
                 <span class="text-[#FBD927] text-[100px] font-bold">{{$props.item.year}}</span>
-                <base-icon name="right_row" size="150" fill="#FBD927" color="#FBD927"/>
+                <base-icon name="right_row" size="150" fill="#FBD927" color="#FBD927" class="mobile:hidden tablet:block"/>
                 <span class="text-[40px] font-sans  w-[300px]">{{$props.item.description}}</span>
               </div>
               <div class="bg-row w-full h-[10px]"/>
@@ -23,7 +23,7 @@
                 </p>
               </div>
             </div>
-            <div class="w-1/3 h-full relative" :style="{backgroundImage: `url(${item.url})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', transform: 'rotate(13deg)'}">
+            <div class="mobile:mt-10 desktop:mt-0 mobile:w-full tablet:w-1/3 h-full relative" :style="{backgroundImage: `url(${item.url})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat', transform: 'rotate(13deg)'}">
               <img class="absolute -left-16 -top-10" src="../assets/images/salad.png" alt="">
               <img class="absolute right-0 bottom-4" src="../assets/images/tomato.png" alt="">
             </div>
