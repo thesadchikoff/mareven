@@ -3,7 +3,7 @@
   .content-container
     .logo-box(:class="scene === 'open-pack' ? 'align-start' : 'align-center'")
       img.logo(src="../assets/images/logo_before.svg", alt="" :class="scene === 'open-pack' ? 'minimal' : 'original'")
-    .radial-blur
+    .radial-blur(class="mobile:h-full tablet:h-[1454.19px]")
     .promo-block(v-if="scene === 'open-pack'" :class="'z-[5000000] bg-no-repeat bg-center mobile:bg-cover tablet:bg-auto absolute mobile:w-[300px] tablet:w-full h-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-fade animate-duration-[400ms] animate-delay-1000'")
     .pack(v-if="scene === 'default'" )
       .open-button(@mouseenter="isHover = true", @mouseleave="isHover = false" @click="scene = 'open-pack'")
@@ -63,7 +63,7 @@ $feature: max-width;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: #df231d;
+	background-color: #e2332d;
 	.content-container {
 		position: relative;
 		display: flex;
@@ -86,7 +86,6 @@ $feature: max-width;
 			flex-direction: column;
 			align-items: center;
 			position: absolute;
-			height: 1454.19px;
 			top: 0;
 			bottom: 29.9%;
 			filter: blur(645.5px);
