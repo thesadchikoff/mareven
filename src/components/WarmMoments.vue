@@ -1,5 +1,6 @@
 <script setup>
 
+import PlanetView from "./ui/PlanetView.vue";
 </script>
 
 <template>
@@ -13,7 +14,8 @@
       </div>
     </div>
     <div class="mobile:w-full tablet:w-1/2 flex mobile:justify-center mobile:items-center relative">
-      <img src="../assets/images/planet.png" alt="" class="mobile:relative mobile:-left-10">
+<!--      <img src="../assets/images/planet.png" alt="" class="mobile:relative mobile:-left-10">-->
+      <planet-view/>
     </div>
   </div>
 </div>
