@@ -7,14 +7,15 @@
     .promo-block(v-if="scene === 'open-pack'" :class="'z-[5000000] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-fade animate-duration-[400ms] animate-delay-1000'")
     .pack(v-if="scene === 'default'" )
       .open-button(@mouseenter="isHover = true", @mouseleave="isHover = false" @click="scene = 'open-pack'")
-        img.row(src="../assets/images/row.svg", alt="")
-        span.btn-label Открой меня
+        img.row(src="../assets/images/row.svg", alt="" class="tablet:left-[35%] mobile:leftt-0")
+        span.btn-label(class="mobile:left-[10%] tablet:left-[35%] top-[20%] absolute") Открой меня
       img.pack__picture(
         src="../assets/images/pack.png",
         alt="",
         @mouseenter="isHover = true",
         @mouseleave="isHover = false",
         :class="isHover ? 'trigger' : 'swing'"
+        class="mobile:w-[350px] tablet:w-max mobile:-bottom-24 absolute tablet:block"
       )
     img.open-effect(v-if="scene === 'open-pack'" src="../assets/images/effect.svg")
     .open-pack(v-if="scene === 'open-pack'" )
@@ -115,21 +116,16 @@ $feature: max-width;
 				}
 				.row {
 					position: absolute;
-					left: 35%;
 					top: -2rem;
 					animation: swing 0.9s infinite alternate;
 				}
 			}
 			.pack-picture {
-				//z-index: 5;
 				position: absolute;
         bottom: -20px;
 			}
 			span {
 				font-size: 30px;
-				position: absolute;
-				top: 20%;
-				left: 35%;
 				color: rgb(223, 35, 29);
 				font-weight: 600;
 				font-family: 'Montserrat', sans-serif;
