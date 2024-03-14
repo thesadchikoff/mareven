@@ -1,6 +1,6 @@
 <template>
 <!--  <modal-view/>-->
-	<section class="flex bg-[#fffbde] mobile:h-full tablet:h-[1000px] flex-col gap-[35px] w-full h-screen z-50 justify-center">
+	<section class="flex bg-[#fffbde] mobile:h-[1100px] tablet:h-[1000px] flex-col gap-[35px] w-full h-screen z-50 justify-center">
       <div class="w-full mobile:px-[10px] tablet:px-32">
         <h1 class="uppercase text-[#df231d] flex flex-wrap items-center gap-[4px] font-bold text-[50px]">
           История
