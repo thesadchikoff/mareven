@@ -9,9 +9,9 @@
       </div>
 		<swiper
 			:modules="modules"
-			class="px-10 h-[1500px] bg-transparent flex items-center justify-center flex-col"
-			:slides-per-view="3"
-			:space-between="50"
+			class="px-10 bg-transparent flex items-center justify-center flex-col"
+			:slides-per-view="mobile ? 1 : 3"
+			:space-between="mobile ? 150 : 50"
 			@swiper="onSwiper"
 			@slideChange="onSlideChange"
 		>
@@ -34,6 +34,7 @@ import Broth from '../assets/images/broth.png'
 import SlideItem from './SlideItem.vue'
 import {reactive, ref, watch} from 'vue'
 import ModalView from "./ModalView.vue";
+import {useBreakpoints} from "@vueuse/core";
 export default {
 	name: 'history-section',
 	components: {
@@ -45,6 +46,13 @@ export default {
 	setup() {
     const screenWidth = ref(window.innerWidth)
     const showModal = ref(false)
+    const breakpoints = useBreakpoints({
+      mobile: 0,
+      tablet: 640,
+      laptop: 1024,
+      desktop: 1280,
+    })
+
 		const items = reactive([
       {
         id: 1,
@@ -162,6 +170,7 @@ export default {
 
       },
 		])
+    const mobile = breakpoints.between('mobile', 'tablet')
     const selectedItem = ref(null)
     const openModal = (item) => {
       selectedItem.value = item
@@ -187,6 +196,10 @@ export default {
 		const onSlideChange = () => {
 			console.log('slide change')
 		}
+    // console.log(mobile)
+    watch(mobile, (newValue, oldValue) => {
+      console.log(oldValue, newValue)
+    })
 		return {
 			onSwiper,
 			onSlideChange,
@@ -196,7 +209,9 @@ export default {
       showModal,
       openModal,
       selectedItem,
-      closeModal
+      closeModal,
+      breakpoints,
+      mobile
 		}
 	},
 }

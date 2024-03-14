@@ -11,10 +11,11 @@
               :class="{ active: focused }"
               :src="item.url"
               alt=""
+              class="absolute top-[-20px] mobile:left-[25%] tablet:left-[-50px]"
           />
 
         </div>
-        <div  v-html="item.separator" class="connector"  v-if="!isViewSeparator"/>
+        <div  v-html="item.separator" class="connector mobile:hidden tablet:block"  v-if="!isViewSeparator"/>
       </div>
     </div>
     <div class="flex w-full justify-end">
@@ -136,9 +137,7 @@ export default {
 
 img {
   transform: rotate(12.38deg);
-  position: absolute;
-  top: -50px;
-  left: -20px;
+
   transition: all 0.5s ease;
 }
 

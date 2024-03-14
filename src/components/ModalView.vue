@@ -2,7 +2,7 @@
   <div>
     <teleport to="body">
       <div class="modal-wrapper" @click="close">
-        <div @click.stop class="bg-white mobile:overflow-y-auto tablet:overflow-y-hidden flex flex-col mobile:w-full mobile:rounded-none tablet:container mobile:h-full tablet:h-[500px] animate-fade-up animate-duration-[400ms] animate-delay-100 p-10 rounded-3xl">
+        <div @click.stop class="bg-white mobile:overflow-y-auto tablet:overflow-y-hidden flex flex-col tablet:px-10 mobile:w-full mobile:rounded-none tablet:rounded-2xl tablet:container mobile:h-full tablet:h-[500px] animate-fade-up animate-duration-[400ms] animate-delay-100 p-10 rounded-3xl">
           <div  class="w-full h-max flex justify-end  items-center">
             <base-icon name="close_button" @click="close" size="57" color="#57A03C" class="cursor-pointer"/>
           </div>
