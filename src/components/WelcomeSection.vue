@@ -4,7 +4,7 @@
     .logo-box(:class="scene === 'open-pack' ? 'align-start' : 'align-center'")
       img.logo(src="../assets/images/logo_before.svg", alt="" :class="scene === 'open-pack' ? 'minimal' : 'original'")
     .radial-blur
-    .promo-block(v-if="scene === 'open-pack'" :class="'z-[5000000] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-fade animate-duration-[400ms] animate-delay-1000'")
+    .promo-block(v-if="scene === 'open-pack'" :class="'z-[5000000] bg-no-repeat bg-center mobile:bg-cover tablet:bg-auto absolute mobile:w-[300px] tablet:w-full h-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-fade animate-duration-[400ms] animate-delay-1000'")
     .pack(v-if="scene === 'default'" )
       .open-button(@mouseenter="isHover = true", @mouseleave="isHover = false" @click="scene = 'open-pack'")
         img.row(src="../assets/images/row.svg", alt="" class="tablet:left-[35%] mobile:leftt-0")
@@ -23,6 +23,7 @@
         src="../assets/images/open_pack.png",
         alt="",
         :class="'animate-fade-up'"
+        class="absolute -bottom-[80px]"
       )
 </template>
 
@@ -150,28 +151,11 @@ $feature: max-width;
         z-index: 500000;
       }
     }
-		@media screen and ($feature: 500px) {
-			.logo {
-				width: 100px;
-				height: 50px;
-			}
-		}
-		@media screen and ($feature: 1400px) {
-			.logo {
-				width: 100%;
-				height: 490px;
-			}
-		}
 	}
 }
 
 .promo-block {
   background-image: url("../assets/images/25.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: auto;
-  width: 100%;
-  height: 100%;
 }
 
 .logo-box {
