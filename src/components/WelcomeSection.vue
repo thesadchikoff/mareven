@@ -63,7 +63,7 @@ $feature: max-width;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: #e2332d;
+	background-color: #f34039;
 	.content-container {
 		position: relative;
 		display: flex;
