@@ -1,5 +1,5 @@
 <template lang="pug">
-.welcome-section()
+.welcome-section(class="mobile:py-[10px] tablet:py-[63px]  h-screen w-full")
   .content-container
     .logo-box(:class="scene === 'open-pack' ? 'align-start' : 'align-center'")
       img.logo(src="../assets/images/logo_before.svg", alt="" :class="scene === 'open-pack' ? 'minimal' : 'original'")
@@ -15,7 +15,7 @@
         @mouseenter="isHover = true",
         @mouseleave="isHover = false",
         :class="isHover ? 'trigger' : 'swing'"
-        class="mobile:w-[350px] tablet:w-max mobile:-bottom-24 absolute tablet:block"
+        class="mobile:w-[350px] tablet:w-max mobile:-bottom-8 tablet:-bottom-28 absolute tablet:block"
       )
     img.open-effect(v-if="scene === 'open-pack'" src="../assets/images/effect.svg")
     .open-pack(v-if="scene === 'open-pack'" )
@@ -59,10 +59,7 @@ export default {
 <style lang="scss" scoped>
 $feature: max-width;
 .welcome-section {
- 	width: 100%;
-	height: 100vh;
 	position: sticky;
-	padding: 63px 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -83,7 +80,7 @@ $feature: max-width;
       }
     }
 		.radial-blur {
-			z-index: 1;
+			z-index: 4;
 			width: 100%;
 			display: flex;
 			flex-direction: column;
